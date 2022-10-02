@@ -1,7 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Errand());
 }
 
 class MyApp extends StatelessWidget {
@@ -480,6 +481,7 @@ class Errand extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Errand list',
+      scrollBehavior: NoThumbScrollBehavior().copyWith(scrollbars: false),
       home: Scaffold(
         appBar: AppBar(
           elevation: 0,
@@ -501,8 +503,9 @@ class Errand extends StatelessWidget {
           ),
         ),
         body: Container(
-          padding: EdgeInsets.all(20),
+          color: Colors.white,
           child: ListView(
+            padding: EdgeInsets.all(20),
             children: [
               Container(
                 padding: EdgeInsets.fromLTRB(20, 20, 20, 24),
@@ -805,11 +808,266 @@ class Errand extends StatelessWidget {
                         ),
                       ),
                     ]),
-              )
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 24),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                    color: Colors.white,
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color(0xffbbc1d0),
+                        spreadRadius: 3,
+                        blurRadius: 3,
+                        offset: Offset(0, 3),
+                      )
+                    ]),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            '서울 마포구',
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff1f1f21),
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(6),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(6.0)),
+                              color: Color(0xfff0e9ff),
+                            ),
+                            child: Text(
+                              '시급 5만원',
+                              style: TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.w800,
+                                color: Color(0xff8f5bff),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 6,
+                      ),
+                      Text(
+                        '8/7 오후 12:00',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff9a9a9a),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 14,
+                      ),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(10, 8, 10, 8),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          color: Color(0xfff4f8ff),
+                        ),
+                        child: Text(
+                          '앨범 대리구매',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xff3c88fa),
+                          ),
+                        ),
+                      )
+                    ]),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 24),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                    color: Colors.white,
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color(0xffbbc1d0),
+                        spreadRadius: 3,
+                        blurRadius: 3,
+                        offset: Offset(0, 3),
+                      )
+                    ]),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            '서울 마포구',
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff1f1f21),
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(6),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(6.0)),
+                              color: Color(0xfff0e9ff),
+                            ),
+                            child: Text(
+                              '시급 5만원',
+                              style: TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.w800,
+                                color: Color(0xff8f5bff),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 6,
+                      ),
+                      Text(
+                        '8/7 오후 12:00',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff9a9a9a),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 14,
+                      ),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(10, 8, 10, 8),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          color: Color(0xfff4f8ff),
+                        ),
+                        child: Text(
+                          '앨범 대리구매',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xff3c88fa),
+                          ),
+                        ),
+                      )
+                    ]),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 24),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                    color: Colors.white,
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color(0xffbbc1d0),
+                        spreadRadius: 3,
+                        blurRadius: 3,
+                        offset: Offset(0, 3),
+                      )
+                    ]),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            '서울 마포구',
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xff1f1f21),
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(6),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(6.0)),
+                              color: Color(0xfff0e9ff),
+                            ),
+                            child: Text(
+                              '시급 5만원',
+                              style: TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.w800,
+                                color: Color(0xff8f5bff),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 6,
+                      ),
+                      Text(
+                        '8/7 오후 12:00',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff9a9a9a),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 14,
+                      ),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(10, 8, 10, 8),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          color: Color(0xfff4f8ff),
+                        ),
+                        child: Text(
+                          '앨범 대리구매',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w800,
+                            color: Color(0xff3c88fa),
+                          ),
+                        ),
+                      )
+                    ]),
+              ),
             ],
           ),
         ),
       ),
     );
   }
+}
+
+class NoThumbScrollBehavior extends ScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+        PointerDeviceKind.stylus,
+      };
 }
